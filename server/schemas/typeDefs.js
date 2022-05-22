@@ -30,6 +30,20 @@ const typeDefs = gql`
     orders: [Order]
   }
 
+  type Review {
+    _id: ID
+    reviewBody: String
+    createdAt: String
+    firstName: String
+  }
+
+  type Rating {
+    _id: ID
+    ratingBody: Int
+    createdAt: String
+    firstName: String
+  }
+
   type Checkout {
     session: ID
   }
@@ -54,6 +68,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+    addReview(reviewId: ID!, reviewBody: String!): Product
   }
 `;
 

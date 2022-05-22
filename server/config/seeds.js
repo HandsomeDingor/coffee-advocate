@@ -1,7 +1,8 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Review, Rating } = require('../models');
 
 db.once('open', async () => {
+ 
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
@@ -148,6 +149,11 @@ db.once('open', async () => {
     email: 'eholt@testmail.com',
     password: 'password12345'
   });
+
+
+
+ 
+ 
 
   console.log('users seeded');
 

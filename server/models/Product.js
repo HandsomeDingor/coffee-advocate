@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
+const reviewSchema = require('./Review');
+const ratingSchema = require('./Rating');
+
 
 const productSchema = new Schema({
   name: {
@@ -28,7 +31,13 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
-  }
+  },
+  reviews: [reviewSchema],
+  ratings: [ratingSchema]
+});
+
+productSchema.virtual('ratingCount').get(function() {
+  return this.ratings.length;
 });
 
 const Product = mongoose.model('Product', productSchema);
