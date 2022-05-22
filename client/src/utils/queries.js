@@ -9,6 +9,12 @@ export const QUERY_PRODUCTS = gql`
       price
       quantity
       image
+      reviews {
+        _id
+        createdAt
+        reviewBody
+        firstName
+      }
       category {
         _id
       }

@@ -116,7 +116,7 @@ const resolvers = {
           { new: true, runValidators: true }
         );
 
-        return updatedThought;
+        return updatedProduct;
       }
 
       throw new AuthenticationError('You need to be logged in!');

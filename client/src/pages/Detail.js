@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import ReviewForm from '../components/ReviewForm';
+import Auth from '../utils/auth';
+
 
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
@@ -101,6 +104,8 @@ function Detail() {
               Remove from Cart
             </button>
           </p>
+
+          {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 
           <img
             src={`/images/${currentProduct.image}`}

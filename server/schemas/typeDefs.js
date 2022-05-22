@@ -14,6 +14,9 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     category: Category
+    ratingCount: Int
+    reviews: [Review]
+    ratings: [Rating]
   }
 
   type Order {
@@ -68,7 +71,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-    addReview(reviewId: ID!, reviewBody: String!): Product
+    addReview(productId: ID!, reviewBody: String!): Product
   }
 `;
 
