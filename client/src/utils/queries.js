@@ -61,7 +61,7 @@ export const QUERY_USER = gql`
       lastName
       orders {
         _id
-        purchaseDate
+        reviewDate
         products {
           _id
           name

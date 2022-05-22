@@ -22,7 +22,7 @@ const typeDefs = gql`
 
   type Order {
     _id: ID
-    purchaseDate: String
+    reviewDate: String
     products: [Product]
   }
 
