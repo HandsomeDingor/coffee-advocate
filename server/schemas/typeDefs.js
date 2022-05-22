@@ -39,6 +39,7 @@ const typeDefs = gql`
     reviewBody: String
     createdAt: String
     firstName: String
+    userId: String
   }
 
   type Rating {

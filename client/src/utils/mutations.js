@@ -60,6 +60,7 @@ export const ADD_REVIEW = gql`
         reviewBody
         createdAt
         firstName
+        userId
       }
     }
   }
