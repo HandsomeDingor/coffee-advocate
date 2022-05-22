@@ -47,6 +47,7 @@ function ProductItem(item) {
         <img
           alt={name}
           src={`/images/${image}`}
+          width = "50%"
         />
         <p>{name}</p>
       </Link>

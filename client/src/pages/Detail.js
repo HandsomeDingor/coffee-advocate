@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import ReviewForm from '../components/ReviewForm';
+import ReviewList from '../components/ReviewList';
+
 import Auth from '../utils/auth';
 
 
@@ -94,6 +96,12 @@ function Detail() {
 
           <p>{currentProduct.description}</p>
 
+          <img
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+            width = '30%'
+          />
+
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -104,14 +112,19 @@ function Detail() {
               Remove from Cart
             </button>
           </p>
-
+          <div>
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
+          </div>
+          <div>
+          <ReviewList reviews={currentProduct.reviews} />
+          </div>
+          
 
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          
         </div>
+
+
+
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />

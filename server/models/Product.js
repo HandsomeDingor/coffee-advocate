@@ -40,6 +40,10 @@ productSchema.virtual('ratingCount').get(function() {
   return this.ratings.length;
 });
 
+productSchema.virtual('reviewCount').get(function() {
+  return this.ratings.length;
+});
+
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;

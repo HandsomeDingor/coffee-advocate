@@ -15,6 +15,7 @@ const typeDefs = gql`
     price: Float
     category: Category
     ratingCount: Int
+    reviewCount: Int
     reviews: [Review]
     ratings: [Rating]
   }
