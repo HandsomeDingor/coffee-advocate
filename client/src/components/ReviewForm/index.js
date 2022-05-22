@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import {Redirect} from "react-router-dom"
 import { useStoreContext } from '../../utils/GlobalState';
-
 import { useMutation } from '@apollo/client';
-import { ADD_REVIEW } from '../../utils/mutations';
+import { ADD_REVIEW, ADD_ORDER } from '../../utils/mutations';
 
 const ReviewForm = ({ productId }) => {
   const [reviewBody, setBody] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
   const [addReview, { error }] = useMutation(ADD_REVIEW);
+  const [addOrder] = useMutation(ADD_ORDER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -24,7 +25,13 @@ const ReviewForm = ({ productId }) => {
     try {
       await addReview({
         variables: { reviewBody, productId },
+        
       });
+
+      
+      
+
+      await 
 
       // clear form value
       setBody('');
