@@ -8,7 +8,7 @@ const reviewSchema = new Schema(
       required: true,
       maxlength: 280
     },
-    firstName: {
+    userId: {
       type: String,
       required: true
     },

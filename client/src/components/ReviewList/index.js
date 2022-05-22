@@ -12,8 +12,8 @@ const ReviewList = ({ reviews }) => {
           reviews.map(review => (
             <p className="pill mb-3" key={review._id}>
               {review.reviewBody} //{' '}
-              <Link to={`/profile/${review.firstName}`} style={{ fontWeight: 700 }}>
-                {review.firstName} on {review.createdAt}
+              <Link to={`/profile/${review.userId}`} style={{ fontWeight: 700 }}>
+                {review.userId} on {review.createdAt}
               </Link>
             </p>
           ))}

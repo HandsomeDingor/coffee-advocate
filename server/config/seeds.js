@@ -82,14 +82,7 @@ db.once('open', async () => {
       price: 9.99,
       quantity: 100
     },
-    {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
-    },
+    
     {
       name: 'Dark May Organic',
       category: categories[3]._id,
