@@ -7,7 +7,7 @@ const ratingSchema = new Schema(
       type: Number,
       required: true,
     },
-    firstName: {
+    userId: {
       type: String,
       required: true
     },

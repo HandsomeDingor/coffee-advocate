@@ -38,6 +38,7 @@ const typeDefs = gql`
     _id: ID
     reviewBody: String
     createdAt: String
+    userId: String
     firstName: String
   }
 
@@ -45,7 +46,7 @@ const typeDefs = gql`
     _id: ID
     ratingBody: Int
     createdAt: String
-    firstName: String
+    userId: String
   }
 
   type Checkout {

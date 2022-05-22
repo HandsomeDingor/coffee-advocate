@@ -8,7 +8,7 @@ const ReviewForm = ({ productId }) => {
   const [reviewBody, setBody] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
   const [addReview, { error }] = useMutation(ADD_REVIEW);
-  const [addOrder] = useMutation(ADD_ORDER);
+  
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -24,7 +24,7 @@ const ReviewForm = ({ productId }) => {
 
     try {
       await addReview({
-        variables: { reviewBody, productId },
+        variables: { reviewBody, productId},
         
       });
 
